@@ -10,7 +10,10 @@
   <img mat-card-image src="https://www.nea.gov.sg/assets/images/map/base-853.png" alt="Photo of Weather">
   <mat-card-content>
     <p>
-        Country : Singapore
+      <select (change)= "changeCity($event)"  >
+        <option *ngFor=" let country of countries" [value]= "country.city">{{country.city}}</option>
+      </select>
+        
     </p>
     <p>
       Temperature : {{model.temp - 273.15 | number}}
